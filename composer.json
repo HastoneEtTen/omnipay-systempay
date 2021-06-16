@@ -1,5 +1,5 @@
 {
-  "name": "hounddd/omnipay-systempay",
+  "name": "hastoneetten/omnipay-systempay",
   "type": "library",
   "description": "SystemPay driver for the Omnipay payment processing library",
   "keywords": [
@@ -10,12 +10,16 @@
     "payment",
     "payzen"
   ],
-  "homepage": "https://github.com/hounddd/omnipay-systempay",
+  "homepage": "https://github.com/HastoneEtTen/omnipay-systempay",
   "license": "MIT",
   "authors": [
     {
       "name": "Hounddd",
       "homepage": "https://github.com/hounddd"
+    },
+    {
+      "name": "Hastone et Ten",
+      "email": "web@hastone-et-ten.fr"
     }
   ],
   "autoload": {
