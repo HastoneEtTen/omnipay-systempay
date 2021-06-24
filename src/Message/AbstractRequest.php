@@ -73,6 +73,16 @@ abstract class AbstractRequest extends OmnipayAbstractRequest
         return $this->setParameter('certificate', $value);
     }
 
+    public function getURLGateway()
+    {
+        return $this->getParameter('urlGateway');
+    }
+
+    public function setURLGateway($value)
+    {
+        return $this->setParameter('urlGateway', $value);
+    }
+
     /**
      * @param $value
      * @return AbstractRequest

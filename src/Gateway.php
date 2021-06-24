@@ -47,6 +47,16 @@ class Gateway extends AbstractGateway
         return $this->setParameter('certificate', $value);
     }
 
+    public function getURLGateway()
+    {
+        return $this->getParameter('urlGateway');
+    }
+
+    public function setURLGateway($value)
+    {
+        return $this->setParameter('urlGateway', $value);
+    }
+
     public function setParameter($key, $value)
     {
         return parent::setParameter($key, $value);

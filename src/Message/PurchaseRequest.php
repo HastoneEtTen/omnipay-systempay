@@ -87,6 +87,10 @@ class PurchaseRequest extends AbstractRequest
 
     public function getEndpoint()
     {
+        if (trim($this->getURLGateway()) !== '') {
+            return $this->getURLGateway();
+        }
+
         return $this->liveEndpoint;
     }
 }
