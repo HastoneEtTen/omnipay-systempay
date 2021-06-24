@@ -4,6 +4,7 @@ namespace Omnipay\SystemPay\Message;
 
 use Omnipay\Common\Message\AbstractResponse;
 use Omnipay\Common\Message\RedirectResponseInterface;
+use Omnipay\Common\Message\RequestInterface;
 
 /**
  * SystemPay Purchase Response
@@ -12,8 +13,26 @@ class PurchaseResponse extends AbstractResponse implements RedirectResponseInter
 {
     public $liveEndpoint = 'https://paiement.systempay.fr/vads-payment/';
 
+    /**
+     * Constructor
+     *
+     * @param RequestInterface $request the initiating request.
+     * @param mixed $data
+     */
+    public function __construct(RequestInterface $request, $data, $endPoint = null)
+    {
+        $this->request = $request;
+        $this->data = $data;
+        if ($endPoint !== null) {
+            $this->liveEndpoint = $endPoint;
+        }
+    }
+
     public function getEndpoint()
     {
+        if (trim($this->data) !== '') {
+            return $this->getURLGateway();
+        }
         return $this->liveEndpoint;
     }
 

@@ -81,14 +81,14 @@ class PurchaseRequest extends AbstractRequest
 
     public function sendData($data)
     {
-        return $this->response = new PurchaseResponse($this, $data);
+        return $this->response = new PurchaseResponse($this, $data, $this->getEndpoint());
     }
 
 
     public function getEndpoint()
     {
-        if (trim($this->getURLGateway()) !== '') {
-            return $this->getURLGateway();
+        if (trim($this->getParameter('urlGateway')) !== '') {
+            return $this->getParameter('urlGateway');
         }
 
         return $this->liveEndpoint;
