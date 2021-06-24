@@ -30,7 +30,7 @@ class PurchaseResponse extends AbstractResponse implements RedirectResponseInter
 
     public function getEndpoint()
     {
-        return $this->getURLGateway();
+        return $this->liveEndpoint;
     }
 
     public function isSuccessful()
